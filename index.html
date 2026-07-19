@@ -70,7 +70,8 @@
 
         .hero {
             padding: 80px 24px 60px 24px;
-            background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+            /* Updated to transition beautifully from smooth linen to clean canvas */
+            background: linear-gradient(180deg, var(--bg-light) 0%, #ffffff 100%);
             text-align: center;
         }
         .hero-container {
@@ -93,7 +94,8 @@
             line-height: 1.2;
             letter-spacing: -0.03em;
             margin-bottom: 20px;
-            color: #0f172a;
+            /* Swapped from #0f172a to your roasted coffee bean color */
+            color: var(--text-main); 
         }
         .hero p {
             font-size: 1.25rem;
