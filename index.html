@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CashLens - Auto Expense Tracker by Monitrix</title>
     
-    <!-- GOOGLE OWNERSHIP VERIFICATION PIN: Replace the content string with your Search Console key -->
+    <!-- GOOGLE OWNERSHIP VERIFICATION PIN -->
     <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_VERIFICATION_STRING_HERE" />
 
     <style>
@@ -28,7 +28,6 @@
             background-color: #ffffff;
         }
 
-        /* Navigation Banner */
         header {
             background-color: #ffffff;
             border-bottom: 1px solid var(--border);
@@ -69,7 +68,6 @@
         }
         .nav-links a:hover { color: var(--primary); }
 
-        /* Hero Landing Space */
         .hero {
             padding: 80px 24px 60px 24px;
             background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
@@ -106,7 +104,6 @@
             margin-right: auto;
         }
 
-        /* Features Section */
         .features-section {
             padding: 60px 24px;
             max-width: 1100px;
@@ -149,7 +146,6 @@
             line-height: 1.5;
         }
 
-        /* Cloud Backup Transparency Notice */
         .notice-box {
             background-color: var(--bg-light);
             border-left: 4px solid var(--primary);
@@ -164,66 +160,42 @@
             font-size: 1.1rem;
         }
 
-        /* Legal Context Layout block */
-        .legal-wrapper {
+        footer {
             border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
             background-color: var(--bg-light);
-            padding: 80px 24px;
-        }
-        .legal-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-        }
-        .legal-container h2 {
-            font-size: 1.75rem;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 8px;
-            color: #0f172a;
-        }
-        .legal-container h2:first-of-type { margin-top: 0; }
-        .legal-container p {
-            font-size: 0.95rem;
-            color: #334155;
-            margin-bottom: 16px;
-        }
-        .effective-tag {
-            font-size: 0.85rem;
             color: var(--text-muted);
-            font-weight: 600;
-            display: block;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        footer .links {
+            margin-bottom: 10px;
+        }
+        footer .links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 10px;
         }
 
-        /* Responsive Mobile Settings */
         @media (max-width: 640px) {
             .hero h1 { font-size: 2.25rem; }
-            .legal-container { padding: 20px; }
-            .nav-links { display: none; } /* Kept clean for single column mobile */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Branding Anchor -->
     <header>
         <div class="nav-container">
             <div class="brand">CashLens <span>by Monitrix</span></div>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#deletion">Data Deletion</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Landing Core -->
     <section class="hero">
         <div class="hero-container">
             <div class="badge">Monitrix Ecosystem Product</div>
@@ -232,7 +204,6 @@
         </div>
     </section>
 
-    <!-- App Feature Display Grid -->
     <section class="features-section" id="features">
         <h2 class="section-title">Engineered For Seamless Financial Tracking</h2>
         <div class="features-grid">
@@ -289,14 +260,19 @@
 
         </div>
 
-        <!-- Explaining Google Drive scope purpose transparently to Google App Reviewers -->
         <div class="notice-box">
             <h4>🔒 Integration with Google Ecosystem Components</h4>
             <p>CashLens integrates secure Google OAuth login nodes alongside incremental file system features via the <code>drive.file</code> architecture scope. This module functions solely to give users an encrypted path to independently push, overwrite, or import their personal internal JSON ledger maps directly to their specific private Google Drive sandbox environment.</p>
         </div>
     </section>
 
-    
+    <footer>
+        <div class="links">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p>&copy; 2026 Monitrix. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
