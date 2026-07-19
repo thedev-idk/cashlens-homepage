@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashLens - Auto Expense Tracker by Monitrix</title>
+    
+    <!-- GOOGLE OWNERSHIP VERIFICATION PIN: Replace the content string with your Search Console key -->
+    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_VERIFICATION_STRING_HERE" />
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent-green: #10b981;
+            --text-main: #0f172a;
+            --text-muted: #4b5563;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        /* Navigation Banner */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 20px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Landing Space */
+        .hero {
+            padding: 80px 24px 60px 24px;
+            background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+            text-align: center;
+        }
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .badge {
+            background-color: #dbeafe;
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 60px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Cloud Backup Transparency Notice */
+        .notice-box {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 60px auto;
+            max-width: 800px;
+        }
+        .notice-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        /* Legal Context Layout block */
+        .legal-wrapper {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg-light);
+            padding: 80px 24px;
+        }
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .legal-container h2 {
+            font-size: 1.75rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            color: #0f172a;
+        }
+        .legal-container h2:first-of-type { margin-top: 0; }
+        .legal-container p {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .effective-tag {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Mobile Settings */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.25rem; }
+            .legal-container { padding: 20px; }
+            .nav-links { display: none; } /* Kept clean for single column mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Branding Anchor -->
+    <header>
+        <div class="nav-container">
+            <div class="brand">CashLens <span>by Monitrix</span></div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#deletion">Data Deletion</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Landing Core -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="badge">Monitrix Ecosystem Product</div>
+            <h1>CashLens - Auto Expense Tracker</h1>
+            <p>An automatic SMS expense tracker and budget planner. Clean, effortless money management built directly onto your device.</p>
+        </div>
+    </section>
+
+    <!-- App Feature Display Grid -->
+    <section class="features-section" id="features">
+        <h2 class="section-title">Engineered For Seamless Financial Tracking</h2>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <h3>💬 SMS Auto Transaction Add</h3>
+                <p>Features an automated parsing algorithm for English and Arabic financial notification texts. Uses secure locally contained operations via opt-in permissions to read financial alerts without uploading contents.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📊 Interactive Charts</h3>
+                <p>Visualize cashflows dynamically with lightning-fast reactive analytics panels tailored to map patterns instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔮 User Balance Projections</h3>
+                <p>Stay ahead of billing periods using predictive mathematical balance forecasts based on historical spending profiles.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💡 Smart Generated Insights</h3>
+                <p>Receive localized intelligent breakdowns highlighting unnecessary spending leaks, tracking improvements, and progress milestones.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💼 Salary Based Mode</h3>
+                <p>Adapt the complete accounting calculation loop to pivot around custom pay cycles instead of standard arbitrary calendar structures.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🧱 Local Storage First via Hive</h3>
+                <p>Data speeds stay fluid. CashLens utilizes structural Hive binary boxes to read/write transactions natively directly to internal memory pipelines.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎯 Category Budgets & Subscriptions</h3>
+                <p>Set custom limits on distinct labels alongside an active recurring subscription transaction hub tracker to prevent unintended overcharges.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎨 Multiple Themes & Customization</h3>
+                <p>Personalize identity presets with nicknames, custom profile images, and multiple structural aesthetic layouts instantly.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📎 Transaction Attachments</h3>
+                <p>Maintain precise records by securely saving physical store receipts or transaction snapshot imagery directly onto matching financial ledger line items.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Clean & Fast UI/UX</h3>
+                <p>Zero clutter. Built completely on a modern native development stack using advanced filters, low latency rendering components, and quick notification anchors.</p>
+            </div>
+
+        </div>
+
+        <!-- Explaining Google Drive scope purpose transparently to Google App Reviewers -->
+        <div class="notice-box">
+            <h4>🔒 Integration with Google Ecosystem Components</h4>
+            <p>CashLens integrates secure Google OAuth login nodes alongside incremental file system features via the <code>drive.file</code> architecture scope. This module functions solely to give users an encrypted path to independently push, overwrite, or import their personal internal JSON ledger maps directly to their specific private Google Drive sandbox environment.</p>
+        </div>
+    </section>
+
+    
+
+</body>
+</html>
